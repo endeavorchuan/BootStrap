@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>媒体应用查询</title>
+    <style>
+        div {
+            padding: 50px 0;
+            border: 1px solid #000800;
+        }
+        div:after {
+            content: '这是一所房子';
+        }
+
+        /* 小于1000px的尺寸就满足 */
+        @media all and (max-width: 1000px) {
+            div {
+              background-color: green;
+            }
+            div:after {
+              content: '房子好大，炕';
+            }
+        }
+
+        /* 小于800px的尺寸就满足 */
+        @media all and (max-width: 800px){
+            div {
+              background-color: khaki;
+            }
+            div:after {
+              content: '房子好小，双人床';
+            }
+        }
+
+        /* 小于500px的尺寸就满足 */
+        @media all and (max-width: 500px) {
+            div {
+              background-color: hotpink;
+            }
+            div:after {
+              content: '房子更小了，单人床';
+            }
+        }
+
+        /* 小于300px的尺寸就满足 */
+        @media all and (max-width: 300px) {
+            div {
+                background-color: turquoise;
+            }
+            div:after {
+                content: '房子极小，没床';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

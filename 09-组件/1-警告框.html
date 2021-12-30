@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>警告框</title>
+    <style>
+        body {
+            padding-bottom: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="alert alert-primary">alert-primary</div>
+        <div class="alert alert-secondary">alert-secondary</div>
+        <div class="alert alert-success">alert-success</div>
+        <div class="alert alert-danger">alert-danger</div>
+        <div class="alert alert-warning">alert-warning</div>
+        <div class="alert alert-info">alert-info</div>
+        <div class="alert alert-light">alert-light</div>
+        <div class="alert alert-dark">alert-dark</div>
+        <br>
+        <hr>
+        <br>
+
+        <!-- 可以在警告框汇总添加链接 -->
+        <div class="alert alert-primary">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-secondary">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-success">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-danger">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-warning">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-info">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-light">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <div class="alert alert-dark">
+            这是一个<a href="#" class="alert-link">链接</a>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <!-- 警告框中添加额外的内容 -->
+        <div class="alert alert-success">
+            <h4 class="alert-heading">这是一个标题</h4>
+            <p>这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容
+                这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容
+                这是一段很长的内容这是一段很长的内容这是一段很长的内容这是一段很长的内容</p>
+            <hr>
+            <p>下面还可以添加一个说明</p>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <!-- 可以关闭的警告框 -->
+        <!-- alert-dismissible  将关闭按钮定位在警告框的右上角 -->
+        <!-- fade show   添加渐隐渐现的视觉效果 -->
+        <div class="alert alert-warning alert-dismissible fade show">
+            这是一个可以关闭的警告框，但是需要引入jQuery与BootStrap.js
+            <!-- data-dismiss="alert"  与js进行交互 -->
+            <button class="close" data-dismiss="alert">&times;</button>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <!-- 通过按钮（js）关闭警告框 -->
+        <div class="alert alert-danger fade show myAlert">
+            通过按钮关闭警告框
+        </div>
+        <button class="closeBtn">关闭警告框</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <script>
+        // 通过js关闭警告框   方法
+        $('.closeBtn').click(function () {
+            $('.myAlert').alert('close');
+        });
+        // 通过js关闭警告框   事件
+        $('.myAlert').on('close.bs.alert', function () {
+            alert('close方法被调用了');
+        });
+        $('.myAlert').on('closed.bs.alert', function () {
+            alert('警告框关闭了');
+        });
+    </script>
+</body>
+</html>

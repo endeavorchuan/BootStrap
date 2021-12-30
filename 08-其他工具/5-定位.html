@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>定位</title>
+    <style>
+        body {
+            padding-top: 300px;
+            height: 5000px;
+        }
+        .pos div {
+            width: 5rem;
+            height: 5rem;
+            background-color: wheat;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row pos ml-1">
+        <div class="position-static">默认值，没有定位</div>
+        <div class="position-relative">相对定位</div>
+        <div class="position-absolute">绝对定位</div>
+        <div class="position-fixed">固定定位</div>
+
+        <div class="fixed-top">固定在顶部</div>
+        <div class="fixed-bottom">固定在底部</div>
+        <div class="fixed-top">粘性置顶，放到这里是没有效果的，需要放到body下的第一层级</div>
+    </div>
+    <div class="sticky-top" style="width: 5rem; height: 5rem; background-color:green;">粘性定位，放到这里是有效果的</div>
+</body>
+</html>

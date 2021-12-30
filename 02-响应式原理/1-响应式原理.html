@@ -1,0 +1,60 @@
+
+<!--
+  响应式所具有的特点
+    1. 网页的宽度自动调整
+    2. 尽量少用绝对宽度
+    3. 字体要使用rem、em作为大小单位
+    4. 布局要使用浮动、弹性布局
+    5. 媒体查询
+
+   rem：r → html根节点，root     em → 字体大小
+   html → font-size:50px
+   div → font-size:3rem（150px）
+   通过js取到用户的屏幕尺寸，通过公式得到html的字体大小，再给文字的rem赋值
+
+
+   @ 规则
+    @charset   定义编码
+    @import     引入css文件（css模块化）
+    @font-face  自定义字体
+    @keyframes  animation中的关键帧
+    @media      媒体查询
+
+   媒体查询：根据一个或多个基于设备类型、具体特点和环境来应用样式
+    @media
+    1. 媒体类型
+    2. 媒体特性
+    3. 逻辑运算符
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式原理</title>
+    <style>
+        @media all {
+            div {
+                font-size: 3rem;
+            }
+        }
+
+        /* 所有设备，且宽度大于400px，div样式设置才能生效 */
+        @media all and (min-width: 400px){
+            div {
+                font-size: 100px;
+            }
+        }
+
+        /* (min-width: 200px) -> 媒体查询 */
+        /* 屏幕尺寸的最小值为200px，屏幕尺寸大于200px时，才会引入此css文件 */
+        /* @import url('css/bootstrao.css')(min-width: 200px); */
+    </style>
+    <link rel="stylesheet" href="./A.css" media="all">
+</head>
+
+<body>
+
+</body>
+</html>

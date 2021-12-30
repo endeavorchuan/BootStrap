@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>提示框</title>
+    <style>
+        body {
+            padding-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-danger" data-toggle="popover" title="这里放的是提示框的标题" data-content="这里放的是提示框的内容">提示框</button>
+
+                <!-- 四个弹出方向 -->
+                <button class="btn btn-secondary" data-toggle="popover" title="这个提示框没有内容，并且是在上面显示" data-placement="top">上面显示提示框</button>
+                <button class="btn btn-info" data-toggle="popover" title="这个提示框没有内容，并且是在右侧显示" data-placement="right">右侧显示提示框</button>
+                <button class="btn btn-primary" data-toggle="popover" title="这个提示框没有内容，并且是在左侧显示" data-placement="left">左侧显示提示框</button>
+                <button class="btn btn-warning" data-toggle="popover" title="这个提示框没有内容，并且是在下面显示" data-placement="bottom">下面显示提示框</button>
+
+                <!-- 失去焦点隐藏提示框 -->
+                <button class="btn btn-dark" data-toggle="popover" title="这个提示框，当焦点失去的时候，就会隐藏" data-trigger="focs">失去焦点隐藏</button>
+
+                <!-- 禁用元素弹出提示框 -->
+                <span class="d-inline-block" data-toggle="popover" data-trigger="hover" data-content="禁用的元素想要弹出提示框，需要在外面添加一层，将交互的内容加到这个层上">
+                    <!-- pointer-events: none  表示这个元素永远不能作为事件触发的一个元素 -->
+                    <!-- 此处需要禁止button最为事件触发源，span才会触发事件 -->
+                    <button class="btn btn-danger" style="pointer-events: none" disabled>禁用的按钮弹出提示框</button>
+                </span>
+            </div>
+        </div>
+
+        <!-- data-属性 -->
+        <div class="row mt-5">
+            <div class="col">
+                <!-- data-animation="false"  提示框显示和隐藏的过渡效果 -->
+                <!-- data-container="body"  提示框出现后，默认添加到body中 -->
+                <!-- data-delay='{"show": 1000, "hide":2000}'  延迟，提示框延迟1s才显示出来，延迟2s才隐藏 -->
+                <!-- data-html="true"  默认为false，为true时会解析HTML样式，为false时，会直接输出标题与内容的标签 -->
+                <!-- data-placement="top"  设置提示框位置  top, right, left, bottom -->
+                <!-- data-trigger="hover"  提示框的触发方式 -->
+                <button class="btn btn-success" data-toggle="popover" title="这是标题" data-content="这是内容"
+                        data-animation="false"
+                        data-container="body"
+                        data-delay='{"show": 1000, "hide":2000}'
+                        data-html="true"
+                        data-placement="top"
+                        data-template='<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+                        data-trigger="hover"
+                >data-属性</button>
+            </div>
+
+            <!-- 方法与事件 -->
+            <div class="col">
+                <button class="btn btn-info" title="方法与事件" id="myPopover">方法与事件</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    <script>
+        // 考虑到性能问题，需要在使用之前初始化提示框
+        $(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+
+        // 方法
+        $('#myPopover').popover('show');    // 显示提示框
+        setTimeout(function () {
+            $('#myPopover').popover('hide');    // 隐藏提示框
+        }, 1000);
+        $('#myPopover').popover('toggle');    // 显示与隐藏的切换，当提示框显示时，此处隐藏；当提示框隐藏时，此处显示
+
+        $('#myPopover').popover('enable');    // 添加提示框功能
+        $('#myPopover').popover('disable');    // 取消提示框的功能
+        $('#myPopover').popover('toggleEnabled');    // 添加与取消的切换，当有提示框功能时，此处取消；当没有提示框功能时，此处添加
+
+        // 事件
+        $('#myPopover').on('show.bs.popover', function () {
+            console.log('提示框要显示了');
+        });
+        $('#myPopover').on('shown.bs.popover', function () {
+          console.log('提示框完全显示了');
+        });
+        $('#myPopover').on('hide.bs.popover', function () {
+          console.log('提示框要隐藏了');
+        });
+        $('#myPopover').on('hidden.bs.popover', function () {
+          console.log('提示框完全隐藏了');
+        });
+        $('#myPopover').on('inserted.bs.popover', function () {
+          console.log('提示框DOM已经插入到页面里了');
+        });
+
+    </script>
+</body>
+
+</html>

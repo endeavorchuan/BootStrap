@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式布局实例</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+        /* 小于400px，一行显示一个 */
+        @media all and (max-width: 400px){
+            div {
+                width: 100%;
+            }
+        }
+        /* 400px~600px，一行显示两个 */
+        @media all and (min-width: 400px) {
+            div {
+                width: 50%;
+            }
+        }
+        /* 600px~800px，一行显示三个 */
+        @media all and (min-width: 600px) {
+            div {
+                width: 33.3%;
+            }
+        }
+        /* 800px~1000px，一行显示四个 */
+        @media all and (min-width: 800px) {
+            div {
+                width: 25%;
+            }
+        }
+        /* 1000px以上，一行显示五个 */
+        @media all and (min-width: 1000px) {
+            div {
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html> 

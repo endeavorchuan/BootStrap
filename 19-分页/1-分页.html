@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>分页</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <ul class="pagination">   <!-- pagination  分页的基础class -->
+<!--                    <li class="page-item"><a href="#" class="page-link">上一页</a></li>-->
+                    <li class="page-item"><a href="#" class="page-link"><span>&laquo;</span></a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link"><span>&raquo;</span></a></li>
+<!--                    <li class="page-item"><a href="#" class="page-link">下一页</a></li>-->
+                </ul>
+            </div>
+
+            <!-- 禁用与激活  span标签代替a标签 -->
+            <div class="col">
+                <ul class="pagination">
+                  <li class="page-item disabled"><span class="page-link">上一页</span></li>
+                  <li class="page-item"><span class="page-link">1</span></li>
+                  <li class="page-item active"><span class="page-link">2</span></li>
+                  <li class="page-item"><span class="page-link">3</span></li>
+                  <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 尺寸 -->
+        <div class="row mt-5">
+            <div class="col">
+                <ul class="pagination pagination-lg">
+                    <li class="page-item"><span class="page-link">上一页</span></li>
+                    <li class="page-item"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                    <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col">
+                <ul class="pagination">
+                    <li class="page-item"><span class="page-link">上一页</span></li>
+                    <li class="page-item"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                    <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item"><span class="page-link">上一页</span></li>
+                    <li class="page-item"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                    <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 对齐方式 -->
+        <div class="row mt-5">
+            <div class="col">
+                <ul class="pagination justify-content-start">
+                    <li class="page-item"><span class="page-link">上一页</span></li>
+                    <li class="page-item"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                    <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><span class="page-link">上一页</span></li>
+                    <li class="page-item"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                    <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item"><span class="page-link">上一页</span></li>
+                    <li class="page-item"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                    <li class="page-item"><span class="page-link">下一页</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+
+</html>

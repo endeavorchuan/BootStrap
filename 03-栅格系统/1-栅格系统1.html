@@ -1,0 +1,59 @@
+<!--
+    将屏幕尺寸分为12列，也就是说一行中可以放下12列
+    将屏幕分为5个响应层（5个尺寸），用户尺寸包含在5个尺寸之内，栅格就会发生变化
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栅格系统1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .row div {
+            height: 100px;
+            background-color: green;
+            border: 1px solid #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 宽度为100% -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 后边的数字决定了这个div占的列数目 -->
+            <div class="col-xl-1">第1列</div>
+            <div class="col-xl-1">第2列</div>
+            <div class="col-xl-1">第3列</div>
+            <div class="col-xl-1">第4列</div>
+            <div class="col-xl-1">第5列</div>
+            <div class="col-xl-1">第6列</div>
+            <div class="col-xl-1">第7列</div>
+            <div class="col-xl-1">第8列</div>
+            <div class="col-xl-1">第9列</div>
+            <div class="col-xl-1">第10列</div>
+            <div class="col-xl-1">第11列</div>
+            <div class="col-xl-1">第12列</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-2">占2列</div>
+            <div class="col-xl-7">占7列</div>
+            <div class="col-xl-1">占1列</div>
+            <div class="col-xl-2">占2列</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">占6列</div>
+            <div class="col-xl-8">占8列</div>
+        </div>
+    </div>
+
+    <!-- 有一个具体数值，根据用户尺寸变化 -->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            -->
+<!--        </div>-->
+<!--    </div>-->
+</body>
+</html>

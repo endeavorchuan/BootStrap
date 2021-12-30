@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>表单</title>
+    <style>
+        body {
+            padding-bottom: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-5">
+                <form action="#">
+                    <!-- 用来放置表单组，放置一组匹配的表单 -->
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <!-- placeholder  HTML5属性，用于提示用户 -->
+                        <input type="text" id="username" class="form-control" placeholder="请输入用户名">
+                        <!-- 放一些小字体的文本 -->
+                        <small class="form-text text-muted">用户名需要用英文、符号组成</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" id="password" class="form-control" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordAgain">确认密码</label>
+                        <!-- disabled  禁用表单 -->
+                        <input type="password" id="passwordAgain" class="form-control" placeholder="请再次输入密码" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">所在地</label>
+                        <!-- multiple  让下拉框变为多选的下拉框 -->
+                        <select name="" id="area" class="form-control" multiple>
+                            <option value="">北京</option>
+                            <option value="">上海</option>
+                            <option value="">广州</option>
+                            <option value="">深圳</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">选择文件</label>
+                        <input type="file" class="form-control-file" id="file">
+                    </div>
+                    <div class="form-group">
+                        <label for="range">滑块</label>
+                        <input type="range" class="form-control-range" id="range">
+                    </div>
+
+                    <!-- 复选框 -->
+                    <div class="form-group">
+                        <label for="">兴趣爱好：</label>
+                        <!-- 选择框要放在这个类里面 -->
+                        <!--  form-check-inline  让表单在一行中显示 -->
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="eat" class="form-check-input">
+                            <label for="eat" class="form-check-label">吃饭</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="sleep" class="form-check-input">
+                            <label for="sleep" class="form-check-label">睡觉</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="fight" class="form-check-input">
+                            <label for="fight" class="form-check-label">打豆豆</label>
+                        </div>
+                    </div>
+
+                    <!-- 单选框 -->
+                    <div class="form-group">
+                        <label for="">性别：</label>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="male" class="form-check-input" name="sex">
+                            <label for="male" class="form-check-label">男</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="female" class="form-check-input" name="sex">
+                            <label for="female" class="form-check-label">女</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+
+        <!--
+            表单的尺寸
+                1. 大尺寸
+                    .form-control-lg
+                    .col-form-label-lg
+                2. 小尺寸
+                    .form-control-sm
+                    .col-form-label-sm
+        -->
+        <div class="row mt-5">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="大尺寸的表单">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="正常尺寸的表单">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-sm" placeholder="小尺寸的表单">
+                </div>
+
+                <div class="form-group">
+                    <select name="" id="" class="form-control col-form-label-lg">
+                        <option value="">大尺寸的下拉框</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="" id=""  class="form-control">
+                        <option value="">正常尺寸的下拉框</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="" id=""  class="form-control col-form-label-sm">
+                        <option value="">小尺寸的下拉框</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 只读属性 -->
+        <div class="row mt-5">
+            <div class="col">
+                <form action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="只读文本" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control-plaintext" placeholder="没有边框的只读文本" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 表单栅格排列 -->
+        <!-- form标签一定要放在行与列的外面 -->
+        <form action="#">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="栅格排列">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="栅格排列">
+                </div>
+            </div>
+        </form>
+        <!-- 表单表格式的排列 -->
+        <form action="#">
+            <div class="form-row">  <!-- 这个class与row的唯一区别，就是间距变小了 -->
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="栅格排列">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="栅格排列">
+                </div>
+            </div>
+        </form>
+
+        <!-- 栅格系统例子 -->
+        <form action="#">
+            <div class="form-row mt-5">
+                <div class="col-md-6 form-group">
+                    <label for="email1">Email</label>
+                    <input type="email" class="form-control" id="email1" placeholder="请输入邮箱">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="password1">Password</label>
+                    <input type="password" class="form-control" id="password1" placeholder="请输入密码">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col form-group">
+                    <label for="homeAddress">家庭地址</label>
+                    <input type="text" id="homeAddress" class="form-control" placeholder="请输入家庭地址">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <label for="companyAddress">公司地址</label>
+                    <input type="text" id="companyAddress" class="form-control" placeholder="请输入公司地址">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="city">城市</label>
+                    <input type="text" class="form-control" id="city" placeholder="请输入您所在的城市"></input>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="marriage">婚姻状况</label>
+                    <select class="form-control" id="marriage">
+                        <option value="">已婚</option>
+                        <option value="">未婚</option>
+                    </select>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label for="education">学历</label>
+                    <select class="form-control" id="education">
+                        <option value="">博士</option>
+                        <option value="">硕士</option>
+                        <option value="">本科</option>
+                        <option value="">大专</option>
+                        <option value="">高中</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="grid">
+                    <label for="grid" class="form-check-label">同意所读内容</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+
+        <!-- 水平排列表单 -->
+        <form action="#">
+            <div class="form-group row mt-5">
+                <label for="email2" class="col-sm-2 col-form-label">Email</label>   <!-- col-form-label  用来决定与后面的表单进行垂直对齐 -->
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email2" placeholder="请输入email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="password2" class="col-sm-2 col-form-label">Password</label>   <!-- col-form-label  用来决定与后面的表单进行垂直对齐 -->
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password2" placeholder="请输入密码">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2">兴趣爱好：</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input type="checkbox" id="eat1" class="form-check-input">
+                        <label for="eat1" class="form-check-label">吃饭</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="sleep1" class="form-check-input">
+                        <label for="sleep1" class="form-check-label">睡觉</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="fight1" class="form-check-input">
+                        <label for="fight1" class="form-check-label">打豆豆</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2">性别：</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input type="radio" id="male1" class="form-check-input" name="sex">
+                        <label for="male1" class="form-check-label">男</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="female1" class="form-check-input" name="sex">
+                        <label for="female1" class="form-check-label">女</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- 内联表单 -->
+        <div class="row mt-5">
+            <div class="col">
+                <form action="#" class="form-inline">
+                    <div class="form-group mr-5">
+                        <label for="">用户名: </label>
+                        <input type="email" class="form-control" value="chc@qq.com">
+                    </div>
+                    <div class="form-group mr-5">
+                        <label for="">密码: </label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="form-group mr-5">
+                        <input type="checkbox" class="form-control-input">
+                        <label for="" class="form-control-label">记住我</label>
+                    </div>
+                    <div class="form-group mr-5">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>

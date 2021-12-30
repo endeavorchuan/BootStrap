@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>float</title>
+    <style>
+        .a,
+        .f div div{
+            width: 5rem;
+            height: 5rem;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="row border f">
+        <div class="col">
+            <div class="float-left">左浮动</div>
+            <div class="float-right">右浮动</div>
+            <div class="float-left float-none">不浮动</div>
+        </div>
+    </div>
+    <!-- 响应式的浮动  float-{breakpoint}-left/..... -->
+    <div class="row border f mt-1">
+        <div class="col">
+            <div class="float-md-left">中等屏幕以上左浮动</div>
+            <div class="float-sm-right">小屏幕以上右浮动</div>
+        </div>
+    </div>
+    <!-- 清除浮动 clearfix -->
+    <div class="row d-block border mt-1 clearfix">
+        <div class="float-left a">左浮动</div>
+        <div class="float-right a">右浮动</div>
+    </div>
+</div>
+</body>
+</html>

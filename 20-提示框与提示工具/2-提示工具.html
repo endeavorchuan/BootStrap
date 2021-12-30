@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>提示工具</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-secondary" data-toggle="tooltip" title="这个提示工具在上面显示" data-placement="top">上面弹出提示工具</button>
+                <button class="btn btn-info" data-toggle="tooltip" title="这个提示工具在上面显示" data-placement="right">右侧弹出提示工具</button>
+                <button class="btn btn-primary" data-toggle="tooltip" title="这个提示工具在上面显示" data-placement="left">左侧弹出提示工具</button>
+                <button class="btn btn-warning" data-toggle="tooltip" title="这个提示工具在上面显示" data-placement="bottom">下面弹出提示工具</button>
+            </div>
+        </div>
+
+        <!-- 应用提示工具 -->
+        <div class="row mt-5">
+            <p>
+              Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress
+              vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel
+              have a terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel
+              williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan whatever keytar,
+              scenester farm-to-table banksy Austin twitter handle freegan cred raw denim single-origin coffee viral.
+            </p>
+        </div>
+
+        <div class="row mt-5">
+            <!-- 自定义HTML -->
+            <div class="col">
+                <button class="btn btn-success" data-toggle="tooltip" data-html="true" title="自<em>定</em>义<b>html</b>">自定义HTML</button>
+            </div>
+
+            <!-- 禁用 -->
+            <div class="col">
+                <span class="d-inline-block" data-toggle="tooltip" title="禁用的元素弹出提示工具，需要在外面添加一个层，把交互的功能添加到这个层上">
+                    <button class="btn btn-primary" style="pointer-events: none" disabled>禁用的按钮弹出提示工具</button>
+                </span>
+            </div>
+
+            <!-- data-属性 -->
+            <!-- data-animation="false"  提示框显示和隐藏的过渡效果 -->
+            <!-- data-container="body"  提示框出现后，默认添加到body中 -->
+            <!-- data-delay='{"show": 1000, "hide":2000}'  延迟，提示框延迟1s才显示出来，延迟2s才隐藏 -->
+            <!-- data-html="true"  默认为false，为true时会解析HTML样式，为false时，会直接输出标题与内容的标签 -->
+            <!-- data-placement="top"  设置提示框位置  top, right, left, bottom -->
+          <div class="col">
+                <button class="btn btn-success" data-toggle="tooltip" title="这是标题"
+                        data-animation="false"
+                        data-container="body"
+                        data-delay='{"show": 1000, "hide":2000}'
+                        data-html="true"
+                        data-placement="top"
+                >data-属性</button>
+            </div>
+
+            <!-- 方法与事件 -->
+            <div class="col">
+                <button class="btn btn-info" title="方法与事件" id="myTooltip">方法与事件</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    <script>
+        // 需要初始化
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // 方法
+        $('#myTooltip').tooltip('show');    // 显示提示框
+        setTimeout(function () {
+          $('#myTooltip').tooltip('hide');    // 隐藏提示框
+        }, 1000);
+        $('#myTooltip').tooltip('toggle');    // 显示与隐藏的切换，当提示框显示时，此处隐藏；当提示框隐藏时，此处显示
+
+        $('#myTooltip').tooltip('enable');    // 添加提示框功能
+        $('#myTooltip').tooltip('disable');    // 取消提示框的功能
+        $('#myTooltip').tooltip('toggleEnabled');    // 添加与取消的切换，当有提示框功能时，此处取消；当没有提示框功能时，此处添加
+
+        // 事件
+        $('#myTooltip').on('show.bs.tooltip', function () {
+          console.log('提示框要显示了');
+        });
+        $('#myTooltip').on('shown.bs.tooltip', function () {
+          console.log('提示框完全显示了');
+        });
+        $('#myTooltip').on('hide.bs.tooltip', function () {
+          console.log('提示框要隐藏了');
+        });
+        $('#myTooltip').on('hidden.bs.tooltip', function () {
+          console.log('提示框完全隐藏了');
+        });
+        $('#myTooltip').on('inserted.bs.tooltip', function () {
+          console.log('提示框DOM已经插入到页面里了');
+        });
+    </script>
+
+</body>
+
+</html>

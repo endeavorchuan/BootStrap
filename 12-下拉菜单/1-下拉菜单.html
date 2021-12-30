@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>下拉菜单</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <!-- 单一按钮的下拉菜单 -->
+            <div class="col-2">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">button标签下拉</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 使用a标签 -->
+            <div class="col-2">
+                <div class="dropdown">
+                    <a href="javascript:;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">a标签下拉</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                        <div class="dropdown-divider"></div>        <!-- 分割线 -->
+                        <a href="#" class="dropdown-item">深圳</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分离式按钮下拉菜单 -->
+            <div class="col-3">
+                <div class="btn-group dropdown">
+                    <button class="btn btn-success">分离式按钮下拉菜单</button>
+                    <!-- dropdown-toggle-split  分隔作用，改变尺寸  -->
+                    <button class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                        <div class="dropdown-divider"></div>        <!-- 分割线 -->
+                        <a href="#" class="dropdown-item">深圳</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下拉菜单尺寸 -->
+            <div class="col-3 d-flex">
+                <div class="dropdown">
+                    <button class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown">大按钮</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown">小按钮</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 下拉的方向 -->
+        <div class="row mt-5">
+            <div class="col">
+                <!-- 向上展开 -->
+                <div class="dropup">
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">向上展开</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- 向右展开 -->
+                <div class="dropright">
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">向右展开</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- 向下展开 -->
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">向下展开</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- 向左展开 -->
+                <div class="dropleft">
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">向左展开</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 菜单项 -->
+        <div class="row mt-5">
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">菜单项使用了button标签</button>
+                    <!-- dropdown-menu-right  对齐方式为右对齐 -->
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">深圳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 非交互式的下拉菜单 -->
+        <!-- 绝对定位，脱离文档流 -->
+        <div class="row mt-5">
+            <div class="col">
+                <div class="dropdown">
+                    <div class="dropdown-menu show">
+                        <span class="dropdown-item-text">非点击的项</span>
+                        <!-- class带默认样式，不论使用h1~h6，字体大小都一样大 -->
+                        <h6 class="dropdown-header">下拉菜单的标题</h6>
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item active">上海</a>     <!-- 当前的选项 -->
+                        <a href="#" class="dropdown-item disabled">广州</a>   <!-- 禁用的选项 -->
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">深圳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 偏移属性 -->
+        <div class="row mt-5" style="margin-top: 260px!important;">
+            <div class="col">
+                <div class="dropdown">
+                    <!-- data-offset="10, 20"   左边偏移10px，上边偏移20px -->
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-offset="10, 20">偏移</button>
+                    <!-- data-reference="parent"   根据父级决定位置 -->
+                    <div class="dropdown-menu" data-reference="parent">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">深圳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- js的方法与事件 -->
+        <div class="row mt-5">
+            <div class="col">
+                <div class="dropdown">
+                    <!-- data-offset="10, 20"   左边偏移10px，上边偏移20px -->
+                    <button class="btn btn-danger dropdown-toggle" id="myBtn">方法</button>
+                    <div class="dropdown-menu" id="myDropdown" data-reference="parent">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">深圳</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 事件 -->
+            <div class="col">
+                <!-- 注意，事件要放在这里，父元素才能触发 -->
+                <div class="dropdown" id="myDropdown1">
+                    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">事件</button>
+                    <div class="dropdown-menu" data-reference="parent">
+                        <a href="#" class="dropdown-item">北京</a>
+                        <a href="#" class="dropdown-item">上海</a>
+                        <a href="#" class="dropdown-item">广州</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">深圳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+    <script>
+        // 方法
+        $('#myBtn').click(function () {
+            // $('#myDropdown').dropdown('show');
+            // $('#myDropdown').dropdown('hide');
+            // $('#myDropdown').dropdown('toggle');
+
+            // toggle不能够显示切换，可能是原生js代码的问题
+            // 解决方案
+            $('#myDropdown').toggle(function () {
+                $('#myDropdown').dropdown('show');
+            }, function () {
+                $('#myDropdown').dropdown('hide');
+            });
+        });
+
+        // 事件
+        $('#myDropdown1').on('show.bs.dropdown', function () {
+            console.log('调用了show方法');
+        });
+        $('#myDropdown1').on('shown.bs.dropdown', function () {
+            console.log('下拉列表完全显示了');
+        });
+        $('#myDropdown1').on('hide.bs.dropdown', function () {
+            console.log('调用了hide方法');
+        });
+        $('#myDropdown1').on('hidden.bs.dropdown', function () {
+            console.log('下拉列表完全隐藏了');
+        });
+    </script>
+</body>
+</html>

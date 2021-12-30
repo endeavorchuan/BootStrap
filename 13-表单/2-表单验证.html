@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>模板页面</title>
+</head>
+
+<body>
+    <div class="container">
+        <!--
+            needs-validation  需要验证
+            novalidate  用来禁用浏览器默认的验证反馈（丑）
+        -->
+        <form action="#" class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 form-group">
+                    <label for="surname">姓</label>
+                    <!-- required  验证 -->
+                    <input type="text" class="form-control" id="surname" placeholder="请输入姓" value="初" required>
+                    <!-- 验证成功对应的class -->
+                    <div class="valid-feedback">
+                        验证通过！
+                    </div>
+                    <!-- 验证失败对应的class -->
+                    <div class="invalid-feedback">
+                      验证失败！
+                    </div>
+                </div>
+
+              <div class="col-md-4 form-group">
+                  <label for="name">名</label>
+                  <input type="text" class="form-control" id="name" placeholder="请输入名" value="浩诚" required>
+                  <div class="valid-feedback">
+                      验证通过！
+                  </div>
+              </div>
+              <div class="col-md-4 form-group">
+                  <label for="username">用户名</label>
+                  <input type="text" class="form-control" id="username" placeholder="请输入用户名" required>
+                  <div class="invalid-feedback">请输入正确的用户名</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="homeAddress">家庭地址</label>
+                    <input type="text" class="form-control" id="homeAddress" placeholder="请输入家庭地址" required>
+                    <div class="invalid-feedback">请输入正确的家庭地址</div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="companyAddress">公司地址</label>
+                    <input type="text" class="form-control" id="companyAddress" placeholder="请输入公司地址" required>
+                    <div class="invalid-feedback">请输入正确的公司地址</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="grid" required>
+                    <label for="grid" class="form-check-label">同意所读内容</label>
+                    <div class="invalid-feedback">必修同意此内容后才能继续操作！</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+
+    </div>
+
+    <script>
+        (function () {
+            var forms = document.querySelectorAll('.needs-validation');
+
+            forms.forEach(function (form, index) {
+                // 检测表单提交事件触发
+                form.addEventListener('submit', function (ev) {
+                    // console.log(1);
+                    // console.log(form.checkValidity());   表单未通过验证为false，通过验证为true
+
+                    if(form.checkValidity() === false) {
+                        ev.preventDefault();  // 阻止浏览器的默认动作（阻止刷新）
+                        ev.stopPropagation();   // 阻止事件冒泡
+                    }
+                    form.classList.add('was-validated');  // 提交时间发生后，不管验证是否成功，都需要给form身上添加这个class
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
